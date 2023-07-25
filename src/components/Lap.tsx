@@ -11,7 +11,7 @@ const Lap = () => {
     const handleClick = useCallback(() => {
         setLap(lap + 1);
         console.log('handling the click');
-    }, []);
+    }, [lap]);
     return (
         <div className="Lap">
             <h1>
