@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./Lap.css";
 
 const Lap = () => {
@@ -8,6 +8,10 @@ const Lap = () => {
         console.log('updating lap');
     }, [lap]);
     
+    const handleClick = useCallback(() => {
+        setLap(lap + 1);
+        console.log('handling the click');
+    }, []);
     return (
         <div className="Lap">
             <h1>
@@ -15,7 +19,7 @@ const Lap = () => {
             </h1>
             <br />
             <br />
-            <button onClick={()=> setLap(lap + 1)}> increment lap</button>
+            <button onClick={handleClick}> increment lap</button>
         </div>
     );
 
